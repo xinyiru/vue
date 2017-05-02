@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	a{
+		display: block;
+		width: ;
+	}
+	.activeNumber{
+		background-color: #aaa;
+		color:#fff;
+	}
+</style>
+<body>
+	<div id="app">
+		<ul class="pagination">
+			<li v-for='n in pageCount'>
+				<!-- <a href="javascript:;" v-bind:class="activeNumber === n+1 ? 'active' : ''"> -->
+				<a href="javascript:;" :class="activeNumber === n+1 ? 'active' : ''">
+				{{ n }}</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
+<script src="js/vue.js"></script>
+<script>
+	var vm=new Vue({
+		el:"#app",
+		data:{
+			activeNumber:1,
+			pageCount:10
+		}
+	})
+</script>
